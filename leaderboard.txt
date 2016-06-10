@@ -1,0 +1,22 @@
+				<?php
+					include("connect.php");
+					$max="SELECT max(points) FROM admin";
+					if(!mysql_query($max, $con)){
+						die('error' . mysql_error());
+					}
+					$res=mysql_fetch_row(mysql_query($max, $con));
+					$best=mysql_fetch_row(mysql_query("SELECT * FROM admin WHERE points='$res[0]'", $con));
+					$records="SELECT * FROM admin";
+					$count=mysql_num_rows(mysql_query($records, $con));
+					for($z=0; $z<=$count; $z++){
+						$less=$best[4]-$z;
+						$next="SELECT * FROM admin WHERE points='$less'";
+						if(!mysql_query($next, $con)){
+							die('error' . mysql_error());
+						}
+						$array=mysql_fetch_row(mysql_query($next, $con));
+						if(isset($array)){
+							echo "<li>" . $array[1] . " : " . $array[4] . "</li>";
+						}
+					}
+				?>
