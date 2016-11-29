@@ -9,15 +9,19 @@
 <?php
 	include('connect.php');
 	$password=md5($_POST['password']);
-	$sql="SELECT * FROM admin WHERE username='$_POST[username]' AND password='$password' AND admin='no'";
-    $sql2="SELECT * FROM admin WHERE username='$_POST[username]' AND password='$password' AND admin='yes'";
-	$num=mysql_num_rows(mysql_query($sql, $con));
-    $num2=mysql_num_rows(mysql_query($sql2, $con));
+	$sql="SELECT * FROM admin WHERE email='$_POST[email]' AND password='$password' AND admin='0'";
+    $sql2="SELECT * FROM admin WHERE email='$_POST[email]' AND password='$password' AND admin='1'";
+	$num=mysqli_num_rows(mysqli_query($con, $sql));
+    $num2=mysqli_num_rows(mysqli_query($con, $sql2));
 	if ($num==1){
-        $_SESSION["user"]=$_POST['username'];
+        $query="SELECT * FROM admin WHERE email='$_POST[email]'";
+        $array=mysqli_fetch_row(mysqli_query($con, $query));
+        $_SESSION["user"]=$array[1];
         header ("location:home.php");    
     }else if($num2==1){
-        $_SESSION["user"]=$_POST['username'];
+        $query="SELECT * FROM admin WHERE email='$_POST[email]'";
+        $array=mysqli_fetch_row(mysqli_query($con, $query));
+        $_SESSION["user"]=$array[1];
         header ("location:admin.php");  
     }
     else {
@@ -26,7 +30,7 @@
         header ("location:login.php");
     }
     //close connection
-    mysql_close($con)
+    mysqli_close($con)
 ?>
 </body>
 </html>

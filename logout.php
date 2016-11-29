@@ -7,7 +7,7 @@
 	{
 	header("Location: Mainpage.html");
 	}
-	mysql_close($con);
+	mysqli_close($con);
 ?>
 </body>
 </html>

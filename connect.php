@@ -3,16 +3,16 @@
 <body>
 
 	<?php
-        $con = mysql_connect("localhost","root","");
+        $con = mysqli_connect("localhost","root","uradd2016");
 
         if (!$con)
 
         {
 
-        die('Could not connect: ' . mysql_error());
+        die('Could not connect: ' . mysqli_error());
 
         }
-        mysql_select_db("Tech_club",$con);
+        mysqli_select_db($con, "tech_club");
 	?>
 </body>
 </html>

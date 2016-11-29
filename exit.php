@@ -7,7 +7,7 @@
 	{
 	header("Location: login.php");
 	}
-	mysql_close($con);
+	mysqli_close($con);
 ?>
 </body>
 </html>

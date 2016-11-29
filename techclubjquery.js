@@ -10344,7 +10344,71 @@ if ( typeof noGlobal === strundefined ) {
 return jQuery;
 }));
 
-$(document).ready(function(){
-
-	
+var main2= function(){
+$('.sec .body').hide();
+$('.sec1 .body').hide();
+$('.sec2 .body').hide();
+$('.sec3 .body').hide();
+$('.sec4 .body').hide();
+$('.sec5 .body').hide();
+$('.sec6 .body').hide();
+$('.sec7 .body').hide();
+$('.sec8 .body').hide();
+$('.b1').click(function(){
+	$('.sec .body').slideDown("slow");
 });
+$('.close').click(function(){
+	$('.sec .body').slideUp("slow");
+});
+$('.b2').click(function(){
+	$('.sec1 .body').slideDown("slow");
+});
+$('.close').click(function(){
+	$('.sec1 .body').slideUp("slow");
+});
+$('.b3').click(function(){
+	$('.sec2 .body').slideDown("slow");
+});
+$('.close').click(function(){
+	$('.sec2 .body').slideUp("slow");
+});
+$('.b4').click(function(){
+	$('.sec3 .body').slideDown("slow");
+});
+$('.close').click(function(){
+	$('.sec3 .body').slideUp("slow");
+});
+$('.b5').click(function(){
+	$('.sec4 .body').slideDown("slow");
+});
+$('.close').click(function(){
+	$('.sec4 .body').slideUp("slow");
+});
+$('.b6').click(function(){
+	$('.sec5 .body').slideDown("slow");
+});
+$('.close').click(function(){
+	$('.sec5 .body').slideUp("slow");
+});
+$('.b7').click(function(){
+	$('.sec6 .body').slideDown("slow");
+});
+$('.close').click(function(){
+	$('.sec6 .body').slideUp("slow");
+});
+$('.b8').click(function(){
+	$('.sec7 .body').slideDown("slow");
+});
+$('.close').click(function(){
+	$('.sec7 .body').slideUp("slow");
+});
+$('.b9').click(function(){
+	$('.sec8 .body').slideDown("slow");
+});
+$('.close').click(function(){
+	$('.sec8 .body').slideUp("slow");
+});
+
+}
+
+$(document).ready(main2);
